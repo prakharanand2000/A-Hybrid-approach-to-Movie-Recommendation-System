@@ -29,14 +29,18 @@ C = the mean vote across the whole report
 For content-based filtering, we have used the TF-IDF (Term Frequency Inverse Document Frequency) technique, which is used to transform the text into a meaningful representation of numbers that is used to fit machine learning algorithms.  
 
 A. Term Frequency is the number of times a term appears in a particular document. So it’s specific to a document. It is calculated as:
+                          
                           TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document).
+
 B. Inverse Document Frequency is a measure of how common or rare a term appears across the entire corpus of documents. So it is common to all documents. If the word is common and appears in many documents, the idf value (normalized) will approach 0 or else approach 1 if it’s rare. 
 IDF is calculated as:  
+
                           IDF(t) = log_e(Total number of documents / Number of documents with term t in it).
 
 3. Collaborative filtering: Collaborative filtering recommendation systems first look at interactions between users and items try to find either similar types of users or similar types of products and based on this similarity, calculate prediction scores and then recommend new products to target users. Every user and item is described by a feature vector in the same space. Collaborative Filtering is mainly of two types:
 
 a. Item-Item based Collaborative Filtering: This technique starts by searching the items that the user has interacted with previously, and finds similar items to it with the help of similarity metrics, and using which a prediction function is defined which then suggests and recommends items to the user. The steps involved in Item-Item based Collaborative Filtering are as follows:
+
 Step-1: First, convert the given data in the form of a user-item matrix.
 Step-2: We then start building the model by finding similarity between all the item pairs. We create vectors for each individual item using the user ratings that are known and then we find the similarity between them which can be found in multiple ways but we have used cosine similarity in our framework.
 
@@ -45,6 +49,7 @@ Cosine Similarity: Cosine similarity is a metric used to measure the similarity 
 ![image](https://user-images.githubusercontent.com/88252622/230611729-1c1ba1ca-3ad7-4422-8ed5-4209187a1541.png)
 
 Step-3: Calculate the recommendation or rating score as: 
+
 ![gif](https://user-images.githubusercontent.com/88252622/230612256-ce79d9f2-3bfa-48d5-ad1c-15d6f0e6657e.gif)
 
 b. User-User based Collaborative Filtering: This technique looks for similar users i.e. users with similar interests, based on the items the users have already rated or interacted with, and recommends other items that may be of interest to other target users. The steps involved in User-User based Collaborative Filtering are as follows:
@@ -52,8 +57,11 @@ b. User-User based Collaborative Filtering: This technique looks for similar use
 Step-1: Convert the given data in the form of a user-item matrix based on the interest of a user in a certain item.
 Step-2: We then start building the model by finding the set of similar users to the target user for which we have again used the cosine similarity according to the user-item matrix. 
 Step-3: Calculate the recommendation score as: 
+
 ![gif](https://user-images.githubusercontent.com/88252622/230612331-5ca87523-de59-4176-8b92-8abec0c31727.gif)
 
 In order for both of these collaborative filtering methods to work, we have used the Singular Value Decomposition (SVD) technique, which is basically a matrix factorization technique that decomposes any given matrix into 3 generic and familiar matrices. The SVD of a m X n matrix A is given by the formula:
+
+
 
 4. Hybrid Filtering: This approach combines the previously mentioned algorithms and then makes recommendations to the user. This algorithm is generally preferred and used by the major leaders of online streaming services since it has the advantages of all the other techniques.   
