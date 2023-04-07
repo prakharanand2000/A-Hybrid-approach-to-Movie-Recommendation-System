@@ -62,8 +62,6 @@ Step-3: Calculate the recommendation score as:
 
 In order for both of these collaborative filtering methods to work, we have used the Singular Value Decomposition (SVD) technique, which is basically a matrix factorization technique that decomposes any given matrix into 3 generic and familiar matrices. The SVD of a m X n matrix A is given by the formula:
 
-![quicklatex com-c931b3a37227b539911c0837f16a540d_l3](https://user-images.githubusercontent.com/88252622/230612896-1017a31e-4c34-491f-b0e5-6f925864936a.svg)
-
 ![gif](https://user-images.githubusercontent.com/88252622/230614256-005a5d9c-36af-4a41-abc4-31a84c4b545a.gif)
 
 where U and V are orthogonal matrices with orthonormal eigenvectors chosen from  AA^T and A^TA respectively. S is a diagonal matrix with r elements equal to the root of the positive eigenvalues of both matrices U and V, which have the same positive eigenvalues. The diagonal elements are composed of singular values.
