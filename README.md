@@ -16,6 +16,7 @@ vi. ratings small.csv: The subset of 100,000 ratings from 700 users on 9,000 mov
 The recommendation system machine learning techniques which we are using are as follows:
 
 1. Popularity-Based Filtering: This is one of the first recommendation systems to ever get developed and successfully deployed. As its name suggests, it has a working principle based on popularity or the latest trend. These systems check the movies which are most popular among the users and directly recommend those without considering other factors like user history i.e. what movies the user has viewed or interacted with in the past, etc. This has a chance to increase user engagement when compared to no recommendation system. But such systems have a huge drawback that they do not provide personalized recommendations to users.
+                                                
                                                 Weighted Rank (WR) = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C
 where,
 R = average for the movie (mean) = (Rating)
@@ -38,16 +39,20 @@ IDF is calculated as:
 a. Item-Item based Collaborative Filtering: This technique starts by searching the items that the user has interacted with previously, and finds similar items to it with the help of similarity metrics, and using which a prediction function is defined which then suggests and recommends items to the user. The steps involved in Item-Item based Collaborative Filtering are as follows:
 Step-1: First, convert the given data in the form of a user-item matrix.
 Step-2: We then start building the model by finding similarity between all the item pairs. We create vectors for each individual item using the user ratings that are known and then we find the similarity between them which can be found in multiple ways but we have used cosine similarity in our framework.
+
 Cosine Similarity: Cosine similarity is a metric used to measure the similarity of two vectors which is measured in terms of the cosine of the angle between the two vectors . Specifically, it measures the similarity in the direction or orientation of the vectors irrespective of their magnitude or scale. Both vectors need to lie on the same plane in the same inner product space, meaning they must produce a scalar through dot product multiplication. Mathematically, the cosine similarity of two vectors A and B is defined as the dot product of the vectors divided by their magnitude as follows:
 
 ![image](https://user-images.githubusercontent.com/88252622/230611729-1c1ba1ca-3ad7-4422-8ed5-4209187a1541.png)
 
 Step-3: Calculate the recommendation or rating score as: 
+![gif](https://user-images.githubusercontent.com/88252622/230612256-ce79d9f2-3bfa-48d5-ad1c-15d6f0e6657e.gif)
 
 b. User-User based Collaborative Filtering: This technique looks for similar users i.e. users with similar interests, based on the items the users have already rated or interacted with, and recommends other items that may be of interest to other target users. The steps involved in User-User based Collaborative Filtering are as follows:
+
 Step-1: Convert the given data in the form of a user-item matrix based on the interest of a user in a certain item.
 Step-2: We then start building the model by finding the set of similar users to the target user for which we have again used the cosine similarity according to the user-item matrix. 
 Step-3: Calculate the recommendation score as: 
+![gif](https://user-images.githubusercontent.com/88252622/230612331-5ca87523-de59-4176-8b92-8abec0c31727.gif)
 
 In order for both of these collaborative filtering methods to work, we have used the Singular Value Decomposition (SVD) technique, which is basically a matrix factorization technique that decomposes any given matrix into 3 generic and familiar matrices. The SVD of a m X n matrix A is given by the formula:
 
